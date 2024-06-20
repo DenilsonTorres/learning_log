@@ -13,6 +13,18 @@
         {%  bootstrap_css %}    
         {%  bootstrap_javascript %}
 
+        <style>
+            .ul-none ul{
+                display: none;
+            }
+            .help-block{
+                display: none;
+            }
+            {% comment %} .aviso_error{
+                display: none;
+            } {% endcomment %}
+        </style>
+
     </head>
     <body>
         <nav class="navbar navbar-default navbar-static-top">
@@ -47,14 +59,12 @@
             </div>
         </nav>
         <div class="container">
-            
-            <div> 
+            <div class="page-header"> 
                 {% block header %} {% endblock header %} 
             </div>
             <div> 
                 {% block content %} {% endblock content %} 
             </div>
-            
         </div>
     </body>
 

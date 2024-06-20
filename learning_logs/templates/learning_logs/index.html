@@ -10,9 +10,22 @@
 
 
 {% block content %}
+    {% if user.is_authenticated %}
 
-    <h3>  <a href=" url 'register' "> 
-        Crie uma conta </a> para utilizar o Learning Log e listar seus tópicos. 
-    </h3>
-
+        <h3>
+            Sempre que você aprender algo novo sobre seus
+            <a href="{% url 'topics' %}">tópicos, </a> faça uma anotação contando sobre o que você aprendeu.
+        </h3>
+        {% else %}
+            <h3>  
+                <a href="{% url 'register' %}"> 
+                Crie uma conta </a> para utilizar o Learning Log 
+                e listar seus tópicos. 
+            </h3>
+            <h3>
+                Sempre que você aprender algo novo sobre seus
+                tópicos,faça uma anotação contando sobre o que você aprendeu.
+            </h3>
+        {% endif %}
+    
 {% endblock content %}
